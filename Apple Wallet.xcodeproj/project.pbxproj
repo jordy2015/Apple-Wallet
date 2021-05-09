@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00F4E4E926D2708B7C787E1D /* Pods_Apple_Wallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAA97842BC4B83ABA3E11473 /* Pods_Apple_Wallet.framework */; };
+		CD01501126479F1400877344 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD01501026479F1400877344 /* HttpClient.swift */; };
+		CD0150172647A49500877344 /* ApplePassHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0150162647A49500877344 /* ApplePassHandler.swift */; };
 		CD5BF1DC264796E70032FAA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5BF1DB264796E70032FAA5 /* AppDelegate.swift */; };
 		CD5BF1DE264796E70032FAA5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5BF1DD264796E70032FAA5 /* SceneDelegate.swift */; };
 		CD5BF1E0264796E70032FAA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5BF1DF264796E70032FAA5 /* ViewController.swift */; };
@@ -17,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F287D2E56616360D6F8AD58 /* Pods-Apple Wallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apple Wallet.release.xcconfig"; path = "Target Support Files/Pods-Apple Wallet/Pods-Apple Wallet.release.xcconfig"; sourceTree = "<group>"; };
+		44B750481CBD19783B98A4C7 /* Pods-Apple Wallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apple Wallet.debug.xcconfig"; path = "Target Support Files/Pods-Apple Wallet/Pods-Apple Wallet.debug.xcconfig"; sourceTree = "<group>"; };
+		CD01501026479F1400877344 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		CD0150162647A49500877344 /* ApplePassHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplePassHandler.swift; sourceTree = "<group>"; };
 		CD5BF1D8264796E70032FAA5 /* Apple Wallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Apple Wallet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD5BF1DB264796E70032FAA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD5BF1DD264796E70032FAA5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -27,6 +34,7 @@
 		CD5BF1E9264796E90032FAA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD5BF1F0264797560032FAA5 /* Apple Wallet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Apple Wallet.entitlements"; sourceTree = "<group>"; };
 		CD5BF1F2264797600032FAA5 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
+		FAA97842BC4B83ABA3E11473 /* Pods_Apple_Wallet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Apple_Wallet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,18 +43,54 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD5BF1F3264797600032FAA5 /* PassKit.framework in Frameworks */,
+				00F4E4E926D2708B7C787E1D /* Pods_Apple_Wallet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28CDBB28E43EF53815B69664 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				44B750481CBD19783B98A4C7 /* Pods-Apple Wallet.debug.xcconfig */,
+				3F287D2E56616360D6F8AD58 /* Pods-Apple Wallet.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CD01500F26479EFF00877344 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CD01501026479F1400877344 /* HttpClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		CD0150142647A44700877344 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				CD0150152647A45B00877344 /* Helpers */,
+				CD01500F26479EFF00877344 /* Network */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		CD0150152647A45B00877344 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CD0150162647A49500877344 /* ApplePassHandler.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		CD5BF1CF264796E70032FAA5 = {
 			isa = PBXGroup;
 			children = (
 				CD5BF1DA264796E70032FAA5 /* Apple Wallet */,
 				CD5BF1D9264796E70032FAA5 /* Products */,
 				CD5BF1F1264797600032FAA5 /* Frameworks */,
+				28CDBB28E43EF53815B69664 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,6 +105,7 @@
 		CD5BF1DA264796E70032FAA5 /* Apple Wallet */ = {
 			isa = PBXGroup;
 			children = (
+				CD0150142647A44700877344 /* Core */,
 				CD5BF1F0264797560032FAA5 /* Apple Wallet.entitlements */,
 				CD5BF1DB264796E70032FAA5 /* AppDelegate.swift */,
 				CD5BF1DD264796E70032FAA5 /* SceneDelegate.swift */,
@@ -77,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				CD5BF1F2264797600032FAA5 /* PassKit.framework */,
+				FAA97842BC4B83ABA3E11473 /* Pods_Apple_Wallet.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -88,9 +134,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD5BF1EC264796E90032FAA5 /* Build configuration list for PBXNativeTarget "Apple Wallet" */;
 			buildPhases = (
+				8178A4310FAF91A95FA3BB91 /* [CP] Check Pods Manifest.lock */,
 				CD5BF1D4264796E70032FAA5 /* Sources */,
 				CD5BF1D5264796E70032FAA5 /* Frameworks */,
 				CD5BF1D6264796E70032FAA5 /* Resources */,
+				A25077393391E596EC861928 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -146,6 +194,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8178A4310FAF91A95FA3BB91 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Apple Wallet-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A25077393391E596EC861928 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Apple Wallet/Pods-Apple Wallet-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Apple Wallet/Pods-Apple Wallet-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Apple Wallet/Pods-Apple Wallet-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CD5BF1D4264796E70032FAA5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -153,6 +243,8 @@
 			files = (
 				CD5BF1E0264796E70032FAA5 /* ViewController.swift in Sources */,
 				CD5BF1DC264796E70032FAA5 /* AppDelegate.swift in Sources */,
+				CD01501126479F1400877344 /* HttpClient.swift in Sources */,
+				CD0150172647A49500877344 /* ApplePassHandler.swift in Sources */,
 				CD5BF1DE264796E70032FAA5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,6 +389,7 @@
 		};
 		CD5BF1ED264796E90032FAA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44B750481CBD19783B98A4C7 /* Pods-Apple Wallet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -320,6 +413,7 @@
 		};
 		CD5BF1EE264796E90032FAA5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F287D2E56616360D6F8AD58 /* Pods-Apple Wallet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -22,6 +22,7 @@ class ViewController: UIViewController {
   var addApplePass: PKAddPassButton = {
     let btn = PKAddPassButton(addPassButtonStyle: PKAddPassButtonStyle.black)
     btn.translatesAutoresizingMaskIntoConstraints = false
+    btn.addTarget(self, action: #selector(getApplePass), for: .touchDown)
     return btn
   }()
 
@@ -48,6 +49,22 @@ class ViewController: UIViewController {
     paymentRequest.paymentSummaryItems = [PKPaymentSummaryItem(label: "Nike choes", amount: NSDecimalNumber(string: "200"))]
     callApplePayControllet(request: paymentRequest)
   }
+    
+    @objc func getApplePass() {
+        let url = "http://localhost:8080/idCard" //URL of your server that generates and return de apple pass in array of bits 
+        HttpClient.default.performRequest(to: url, httpMethod: .get) { [unowned self] (data, error) in
+            if let e = error {
+                print(e.localizedDescription)
+            }
+            
+            if let d = data {
+                let applePass = ApplePassHandler()
+                if !applePass.displayApplePass(self, data: d) {
+                    print("Pass didn't add")
+                }
+            }
+        }
+    }
   
   func callApplePayControllet(request: PKPaymentRequest) {
     let paymentController = PKPaymentAuthorizationController(paymentRequest: request)
